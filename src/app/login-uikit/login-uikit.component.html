@@ -1,0 +1,74 @@
+
+
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+
+  <div class="row">
+
+<div class="input-field col s12">
+
+    <i class="material-icons prefix">account_circle</i>
+
+    <input type="text" name="uname" #uname="ngModel" [(ngModel)]="name" required minlength="3">
+
+    <div class="alert-danger" *ngIf="uname.errors && (uname.dirty || uname.touched )" >
+
+      <div [hidden]= "!uname.errors.required">uname Required!</div>
+      <div [hidden]= "!uname.errors.minlength">uname minlength!</div>
+    </div>
+
+</div>
+    
+  </div>
+
+  <div class="input-field col s12">
+      <button class="btn-large but-submit" >Login</button>
+  
+    </div>
+
+  
+</form> 
+
+
+
+
+
+
+
+
+
+<!-- <form  [formGroup]="utikForm" class="col s12 whilte" (ngSubmit)="onSubmit()">
+
+<div class="row">
+
+<div class="input-field col s12">
+    <i class="material-icons prefix">account_circle</i>
+    <input type="text" formControlName="uname" placeholder="uname" required>
+    
+<div class="alert" *ngIf="uname.errors.required">
+      uname Required
+
+</div>
+</div>
+
+</div>
+<div class="row">
+  <div class="input-field col s12">
+    <i class="material-icons prefix">account_circle</i>
+    <input type="text" formControlName="password" placeholder="Password" required>
+</div>
+
+<div class="row">
+
+  <div class="input-field col s12">
+    <button class="btn-large but-submit" [disabled] = "!utikForm.valid">Login</button>
+
+  </div>
+
+</div>
+</div>
+
+
+
+</form> -->
+
+
